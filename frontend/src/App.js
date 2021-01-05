@@ -1,13 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
-import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+import {
+  createMuiTheme,
+  ThemeProvider as MuiThemeProvider,
+} from "@material-ui/core/styles";
+
 import "./App.css";
 
 // pages
-import home from "./pages/home";
-import login from "./pages/login";
-import signup from "./pages/signup";
+import home from "./pages/Home";
+import login from "./pages/Login";
+import signup from "./pages/Signup";
 
 // components
 import NavBar from "./components/NavBar";
@@ -25,6 +28,21 @@ const theme = createMuiTheme({
       main: "#b0bec5",
       dark: "#808e95",
       contrastText: "#000",
+    },
+  },
+  spread: {
+    form: {
+      textAlign: "center",
+    },
+    pageTitle: {
+      margin: "1px auto 1px auto",
+    },
+    textField: {
+      margin: "10px auto 10px auto",
+    },
+    button: {
+      marginTop: 20,
+      marginBottom: 20,
     },
   },
 });
